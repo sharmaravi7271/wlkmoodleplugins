@@ -30,21 +30,38 @@ class teacherinfo_table extends table_sql
 
     function col_username($value)
     {
+        global $DB;
         if ($value->user_id) {
             return $value->username;
+
         } else {
-             $html ='<input type="text" name="username" id="username_' . $value->id . '" class="form-control enrollid" placeholder="Username">';
-            return $html .='<span class="alert-danger" style="display:none;" id="usererror_'.$value->id.'">'.get_string('usernamerequire','block_enrollforms').'</span>';
+            $user = $DB->get_record('user',array('email'=>$value->email));
+            if(isset($user->username)){
+                return $user->username;
+            }else{
+                $html ='<input type="text" name="username" id="username_' . $value->id . '" class="form-control enrollid" placeholder="Username">';
+                return $html .='<span class="alert-danger" style="display:none;" id="usererror_'.$value->id.'">'.get_string('usernamerequire','block_enrollforms').'</span>';
+            }
+
+
         }
     }
 
     function col_password($value)
     {
+        global $DB;
         if ($value->user_id) {
             return $value->password;
         } else {
-            $html =  '<input type="text" name="password" id="password_' . $value->id . '" class="form-control enrollid" placeholder="Password">';
-            return $html .='<span class="alert-danger" id="passerror_'.$value->id.'" style="display:none;">'.get_string('passwordrequire','block_enrollforms').'</span>';
+
+            $user = $DB->get_record('user',array('email'=>$value->email));
+            if(isset($user->username)){
+                return '';
+            }else{
+                $html =  '<input type="text" name="password" id="password_' . $value->id . '" class="form-control enrollid" placeholder="Password">';
+                return $html .='<span class="alert-danger" id="passerror_'.$value->id.'" style="display:none;">'.get_string('passwordrequire','block_enrollforms').'</span>';
+            }
+
         }
 
 
