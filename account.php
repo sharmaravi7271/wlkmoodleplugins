@@ -62,7 +62,14 @@ if ($account->is_cancelled()) {
     $insert->mnethostid = 1;
     $insert->confirmed = 1;
     user_create_user($insert);
+
+
+
     $existinguser = $DB->get_record('user',array('email'=>$insert->email));
+    $userdata->username = $insert->username;
+    $userdata->password = trim($_POST['password']);
+    $userdata->user_id = $existinguser->id;
+    $DB->update_record('enroll_users',$userdata);
 
     if(complete_user_login($existinguser)){
         $role = $DB->get_record('role',array('shortname'=>'editingteacher'));

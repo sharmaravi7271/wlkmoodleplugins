@@ -46,7 +46,7 @@ $PAGE->requires->jquery();
 echo $OUTPUT->header();
 
 // TEMPORARY FOR DISPLAYIN CONFIRMATION URL FOR TEACHERS
-//echo $CFG->wwwroot.'/blocks/enrollforms/account.php?user='.md5(21);
+//echo $CFG->wwwroot.'/blocks/enrollforms/account.php?user='.md5(3);
 
 $mform = new addteacher_form();
 if ($mform->is_cancelled()) {

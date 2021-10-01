@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-$plugin->version   = 2020110907;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->version   = 2020110908;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2019111200;   // Moodle 3.10.
 $plugin->component = 'block_enrollforms';
 
