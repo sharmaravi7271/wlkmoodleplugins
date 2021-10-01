@@ -62,9 +62,6 @@ if ($account->is_cancelled()) {
     $insert->mnethostid = 1;
     $insert->confirmed = 1;
     user_create_user($insert);
-
-
-
     $existinguser = $DB->get_record('user',array('email'=>$insert->email));
     $userdata->username = $insert->username;
     $userdata->password = trim($_POST['password']);

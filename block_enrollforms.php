@@ -88,14 +88,18 @@ class block_enrollforms extends block_base {
 if ($USER->id > 0) {
     $this->deleteuserformenrolltable();
     $showit = 0;
+
     if (is_siteadmin()) {
-        $html = '<a href="' . $CFG->wwwroot . '/blocks/enrollforms/view.php">' . get_string('pluginname', 'block_enrollforms') . '</a>';
+        $html = '<a href="' . $CFG->wwwroot . '/blocks/enrollforms/view.php">' . get_string('pluginname', 'block_enrollforms') . '</a><br>';
+        $html .= '<a href="' . $CFG->wwwroot . '/blocks/enrollforms/teacherinfo.php">' . get_string('teacherinfo', 'block_enrollforms') . '</a>';
         $showit = 1;
     } else {
+        profile_load_data($USER);
         if ($DB->count_records('enroll_users', array('email' => $USER->email, 'type'=>'teacher'))) {
-
             $html = '<a href="' . $CFG->wwwroot . '/blocks/enrollforms/addstudent.php">' . get_string('addstudent', 'block_enrollforms') . '</a><br>';
-            $html .= '<a href="' . $CFG->wwwroot . '/blocks/enrollforms/studentinfo.php">' . get_string('studentinfo', 'block_enrollforms') . '</a>';
+            if($USER->profile['reports']=='Instructor'){
+                $html .= '<a href="' . $CFG->wwwroot . '/blocks/enrollforms/studentinfo.php">' . get_string('studentinfo', 'block_enrollforms') . '</a>';
+            }
             $showit = 1;
         }
     }

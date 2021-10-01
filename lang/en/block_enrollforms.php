@@ -58,6 +58,10 @@ $string['teacheraddedsuccessfully'] = 'Teacher added successfully';
 $string['totalallottedstudents_help'] = 'Enter total allotted students';
 $string['availabletoseats'] = 'You have {$a->noallotment} user seats available to add to this or other classes';
 $string['teacheraccountsubject'] = 'Activate Account';
+$string['teacherinfo'] = 'Teacher info';
+$string['action'] = 'Action';
+$string['usernamerequire'] = 'Username field is required';
+$string['passwordrequire'] = 'Password field is required';
 $string['totalenrolledstudents'] = 'Total enrolled Students {$a->count}';
 //$string['teachermailtemplate'] = 'Dear {$a->firstname},We are elated that your school has subscribed to the ED Basecamp eLearning Platform to help you navigate thru the summer school sessions this year. This digital platform we have created is a win-win for both students and teachers.Please click the link below to activate your account and complete the Class Roster(s), by entering the names of your students.We look forward to working with you and stay well,';
 $string['teachermailtemplate'] = '<div style="font-size: 16px;font-family: Calibri;"><p dir="ltr" style="text-align: left;"></p>
