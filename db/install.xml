@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/enrollforms/db" VERSION="20181030" COMMENT="XMLDB file for Moodle blocks/enrollforms"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <TABLE NAME="enroll_users" COMMENT="list of  user to enroll">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="firstname" TYPE="char"  LENGTH="80"  NOTNULL="true"  SEQUENCE="false" COMMENT="firstname" />
+                <FIELD NAME="lastname" TYPE="char"  LENGTH="80"  NOTNULL="true"  SEQUENCE="false" COMMENT="lastname" />
+                <FIELD NAME="email" TYPE="char"  LENGTH="80"  NOTNULL="false"  SEQUENCE="false" COMMENT="email" />
+                <FIELD NAME="username" TYPE="char"  LENGTH="80"  NOTNULL="false"  SEQUENCE="false" COMMENT="email" />
+                <FIELD NAME="password" TYPE="char"  LENGTH="30"  NOTNULL="false"  SEQUENCE="false" COMMENT="email" />
+                <FIELD NAME="type" TYPE="char"  LENGTH="80"  NOTNULL="false"  SEQUENCE="false" COMMENT="type" />
+                <FIELD NAME="total_allotment" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="total allotment to student"/>
+                <FIELD NAME="createdby" TYPE="int" LENGTH="10" DEFAULT="0" NOTNULL="true" SEQUENCE="false" COMMENT="total allotment to student"/>
+                <FIELD NAME="teacherenrolledcourse" TYPE="text"  NOTNULL="true" SEQUENCE="false" COMMENT="teacher enroll courses"/>
+                <FIELD NAME="teachergroups" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Field to store group(s) of teacher"/>
+                <FIELD NAME="status" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="status"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+
+
+    </TABLES>
+</XMLDB>
